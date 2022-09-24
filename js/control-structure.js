@@ -14,7 +14,6 @@
 
 // binary
 
-
 // let a = 10;
 // let b = 20;
 
@@ -30,7 +29,6 @@
 
 // Control structure 
 // if elseif else switch case break continue 
-
 
 // if 
 
