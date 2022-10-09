@@ -42,16 +42,16 @@
 
 // create Element
 
-const body = document.querySelector('#div');
+// const body = document.querySelector('#div');
 
-const button = document.createElement('button');
+// const button = document.createElement('button');
 
-button.innerHTML = "Click Me!"
-button.style.backgroundColor = "red";
-button.type = "button"
+// button.innerHTML = "Click Me!"
+// button.style.backgroundColor = "red";
+// button.type = "button"
 
 
-body.appendChild(button)
+// body.appendChild(button)
 
 
 
