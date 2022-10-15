@@ -54,6 +54,25 @@
 // body.appendChild(button)
 
 
+// BOM 
+
+// location
+
+// console.log(`hostName: ${location.hostname}`)
+// window.location.href = "https://www.javatpoint.com/browser-object-model"
+
+
+// screen 
+
+// console.log(screen.height);
+
+//  navigator
+
+// console.log(navigator.userAgent);
+
+
+
+
 
 
 
