@@ -2,21 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <script defer>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script defer>
         alert('fsadfsadf')
     </script> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="Array.js" defer></script>
+  <script src="promise.js" async></script>
 
 
 </head>
 
 <body>
-    <!--     
+
+  <!-- <button id="button">click me</button> -->
+
+  <!-- Button trigger modal -->
+  <!-- <button type="button" class="btn btn-primary" id="modalbutton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+
+  <!-- Modal -->
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!--     
     <p id="p1" class="p1">fdasfasfasdf</p>
     <p  class="p1">fdasfasfasdf</p>
     <p  class="p1">fdasfasfasdf</p>
@@ -37,14 +65,22 @@
         <li>fdasdasf</li>
         <li>fdasdasf</li>
     </ul> -->
-    <!-- 
+  <!-- 
     <div id="div">
         <p>fasdfsaf</p>
     </div> -->
 
-    <!-- <button onclick="alert('fdsafasf')">Click me</button> -->
+  <!-- <button onclick="alert('fdsafasf')">Click me</button> -->
 
-    <!-- <script>
+  <form action="/action_page.php" onsubmit="myFunction(event)">
+    <div>
+      Enter name: <input type="text" name="fname" id="fname">
+      <span style="color:red;display:none">please enter valid string</span>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+
+  <!-- <script>
         for (let i = 1; i <= 5; i++) {
             for (let j = 5; j >= 0; j--) {
                 if( j < i) {
@@ -66,6 +102,27 @@
             document.write('<br>');
         }
     </script> -->
+
+  <script>
+    function myFunction(event) {
+
+      for (const input of event.target) {
+        if (input.value.match(/^([a-z]{5,})$/)) {
+          alert("match!");
+        } else {
+
+          let inp = document.getElementById(input.name);
+
+          if (inp) {
+            inp.nextElementSibling.style.display = "block";
+            event.preventDefault();
+          }
+
+
+        }
+      }
+    }
+  </script>
 
 </body>
 

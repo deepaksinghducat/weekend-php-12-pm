@@ -71,7 +71,7 @@
 
 // find, filter , map
 
-let array = [10,30,50,40,80,14,40];
+// let array = [10,30,50,40,80,14,40];
 
 // let findData = array.find((value, key, arr) => value === 40 )
 
@@ -87,9 +87,9 @@ let array = [10,30,50,40,80,14,40];
 
 // reduce 
 
-let sum = array.reduce((sum,value) => sum + value,0);
+// let sum = array.reduce((sum,value) => sum + value,0);
 
-console.log(sum);
+// console.log(sum);
 
 
 
