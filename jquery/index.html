@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <style>
+            .div {
+                height: 500px;
+                width: 500px;
+                margin: 10px;
+                background-color: red;
+                color: white;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- <div id="div1">
+            div1
+        </div> -->
+
+        <!-- <div class="div1">
+            div1
+        </div> -->
+
+        <!-- <div>
+            div1
+        </div> -->
+
+        <!-- <button id="button">click me !</button> -->
+<!-- 
+        <button id="hide">Hide</button>
+
+        <button id="show">Show</button>
+
+        <button id="toggle">Toggle</button>
+
+        <div>
+            div
+        </div> -->
+
+        <!-- <button id="fadein">FadeIn </button>
+        <button id="fadeout">FadeOut </button>
+        <button id="fadetoggle">fadeToggle </button>
+        <button id="fadeto">FadeTo </button>
+
+        <div>
+            div1
+        </div> -->
+
+        <!-- <button id="slidedown">slidedown </button>
+        <button id="slideUp">slideUp </button>
+        <button id="slidetoggle">slidetoggle </button>
+       
+        <div>
+            div1
+        </div> -->
+
+        <!-- <button id="animate">animate </button>
+       
+        <div>
+            div1
+        </div> -->
+
+
+         <!-- <button id="slidedown">slidedown </button>
+        <button id="slideUp">slideUp </button>
+        <button id="slidetoggle">slidetoggle </button>
+        <button id="stop">stop </button>
+       
+        <div>
+            div1
+        </div> -->
+
+        <!-- <button id="addclass">Add Class</button>
+        <button id="removeclass">Remove Class</button>
+        <button id="toggleclass">Toggle Class</button> -->
+
+        <!-- <div class="div">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti illo itaque unde id 
+            facilis, sequi ea quisquam in obcaecati hic asperiores, fuga libero accusantium voluptas, 
+            deserunt earum non expedita ut.
+        </div> -->
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum porro maxime voluptatibus velit, magni nostrum, consequuntur suscipit, at laudantium voluptate ad eveniet. Blanditiis sequi modi praesentium sit ducimus non veritatis.</p>
+
+        <input type="text" value="fasfasfdasdfadsf">
+
+        <ul>
+            <li>List 1</li>
+            <li>List 2</li>
+            <li>List 3</li>
+            <li>List 4</li>
+            <li>List 5</li>
+            <p>asfas</p>
+        </ul>
+
+        <script>
+            $(document).ready(function () {
+
+                // selectors
+
+                // $('div').css('background-color', 'red');  
+                // $('div').css('height', '500px');
+
+                // events
+
+                // $('button').click(() => {
+                //     $('input').attr('type', 'text');
+                // })
+
+                // $('button').mouseover(() => {
+                //     console.log('button clicked');
+                //     alert('button clicked');
+                // })
+
+                // document.getElementById('button').addEventListener('click',() => {
+                //     console.log('button clicked');
+                // });
+
+                // hide show toggle the div
+                // $('#hide').click(() => {
+                //     $('#hide').hide();
+                //     $('div').hide();
+                // })
+
+                // $('#show').click(() => {
+                //     $('div').show();
+                // })
+
+                // $('#toggle').click(() => {
+                //     $('div').toggle();
+                // })
+
+                // fade fadeIn fadeOut fadeToggle fadeTo
+                // $('#fadeout').click(()=> {
+                //     $('div').fadeOut(3000);
+                // });
+
+                // $('#fadein').click(()=> {
+                //     $('div').fadeIn(3000);
+                // });
+
+                // $('#fadetoggle').click(()=> {
+                //     $('div').fadeToggle(3000);
+                // });
+
+                // $('#fadeto').click(()=> {
+                //     $('div').fadeTo('fast', 0.5);
+                // });
+
+                // slideUp slidedown slidetoggle
+
+                // $('#slideUp').click(() => {
+                //     $('div').slideUp(3000)
+                // })
+
+                // $('#slidedown').click(() => {
+                //     $('div').slideDown(3000)
+                // })
+
+                // $('#slidetoggle').click(() => {
+                //     $('div').slideToggle(3000)
+                // })
+
+                // animate
+                // $('#animate').click(() => {
+                //     $('div').animate({ marginLeft: '400px'}, 3000);
+                //     $('div').animate({ marginTop: '400px'}, 3000);
+                // })
+
+                // stop
+
+                // $('#slideUp').click(() => {
+                //     $('div').slideUp(3000)
+                // })
+
+                // $('#stop').click(() => {
+                //     $('div').stop();
+                // })
+
+                // chaining the methods
+
+                // $('#animate').click(() => {
+                //    $('div')
+                //         .animate({ marginLeft: '400px', marginTop: '400px'}, 3000);
+                // })
+
+                // text html val
+
+                //get
+                // console.log($('div').text());
+
+                // store
+                // $('div').text('fasfdafdasfsd')
+
+                //get
+                // console.log($('div').html());
+
+                // store
+                // $('div').html('fasfdafdasfsd')
+
+                //get
+                // console.log($('input').val());
+
+                // store
+                // $('input').val('deepak')
+
+                // append prepand after before
+                // let input = document.createElement('input')
+                
+                // $('div').append(input)
+                // $('div').prepend(input)
+                // $('div').after(input);
+                // $('div').before(input);
+
+
+                // remove / empty
+                // $('div').remove();
+                // $('div').empty();
+
+                // addClass removeClass toggleClass css
+                // $('#addclass').click(() => {
+                //     $('div').addClass('div')
+                // })
+
+                // $('#removeclass').click(() => {
+                //     $('div').removeClass('div')
+                // })
+
+                // $('#toggleclass').click(() => {
+                //     $('div').toggleClass('div')
+                // })
+
+                // width heigth innerWidth innerHeight outerHeight outerWidth
+
+                // console.log($('div').height());
+                // console.log($('div').innerHeight());
+                // console.log($('div').outerHeight());
+
+                // console.log($('div').width());
+                // console.log($('div').innerWidth());
+                // console.log($('div').outerWidth());
+
+
+                // parent parents parentsUntil
+                // console.log($('li').parent());
+                // console.log($('li').parents());
+                // console.log($('li').parentsUntil('body'));
+
+                // children find
+                // console.log($('ul').children())
+                // console.log($('body').find('p'))
+
+                // siblings next nextAll nextUntill prev prevAll prevUntill
+                // console.log($('ul').siblings())
+                // console.log($('ul').next())
+                // console.log($('ul').nextAll())
+                // console.log($('input').nextUntil('script'))
+                // console.log($('ul').prev())
+                // console.log($('ul').prevAll())
+                // console.log($('ul').prevUntil('p'))
+
+                // first last eq filter not
+                // console.log($('ul').children().first().text());
+                // console.log($('ul').children().last().text());
+                // console.log($('ul').children().eq(1).text());
+                // console.log($('ul').children().filter('li'));
+                // console.log($('ul').children().not('li'));
+
+                // get and post
+                // $.get('https://jsonplaceholder.typicode.com/todos', function(data, status) {
+                //     console.log(data);
+                // });
+
+                // $.post('https://jsonplaceholder.typicode.com/todos', function(data, status) {
+                //     console.log(data);
+                // });
+
+                // $.ajax({
+                //         url: "https://jsonplaceholder.typicode.com/todos", 
+                //         method: "POST",
+                //         success: function(result){
+                //            console.log(result);
+                //         }, 
+
+                //         error: function(err){
+
+                //         }
+                //  });
+
+            });
+        </script>
+
+    </body>
+</html>
