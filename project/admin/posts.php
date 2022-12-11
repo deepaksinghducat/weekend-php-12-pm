@@ -45,7 +45,7 @@
                             <?php foreach($posts as $key => $post): ?>
                                 <tr>
                                     <td><?php echo $key + 1?></td>
-                                    <td><?=$post['image_path']?></td>
+                                    <td><img src="<?=$post['image_path']?>" height="50" /></td>
                                     <td><?=$post['name']?></td>
                                     <td><?=$post['description']?></td>
                                     <td>
@@ -53,7 +53,7 @@
                                             <span class="fa fa-edit"></span>
                                         </a>
 
-                                        <a href="#" class="btn btn-danger ">
+                                        <a href="deletepost.php?id=<?=$post['id']?>"  class="btn btn-danger" onclick="deletePost(event)">
                                             <span class="fa fa-trash"></span>
                                         </a>
                                     </td>

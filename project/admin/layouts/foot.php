@@ -32,6 +32,14 @@
         "lengthChange": false,
         "autoWidth": false,
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+    function deletePost(event) {
+        let response = confirm('Are you sure you want to delete this post?');
+
+        if(! response) {
+            event.preventDefault();
+        }
+    }
 </script>
 
 </body>

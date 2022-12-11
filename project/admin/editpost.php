@@ -35,14 +35,18 @@
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-title" style="width: 100%">
-                        Add Post
+                        Edit Post
                         <a href="posts.php" class="btn btn-primary btn-sm" style="float: right;"> Back </a>
                     </h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <form action="storepost.php" method="POST" enctype="multipart/form-data">
+                    <form action="updatepost.php" method="POST" enctype="multipart/form-data">
                         <div class="card-body">
+
+                            <input type="hidden" name="post_id" value="<?=$post->id?>">
+
+
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" id="name" name="name" value="<?=$post->name?>" placeholder="Enter Name">
@@ -58,12 +62,14 @@
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="image" name="image">
+                                        <input type="hidden" name="previous_image_path" value="<?=$post->image_path?>">
                                         <label class="custom-file-label" for="image">Choose file</label>
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text">Upload</span>
                                     </div>
                                 </div>
+                                <img src="<?=$post->image_path?>" height="50" />
                             </div>
                         </div>
                         <!-- /.card-body -->
