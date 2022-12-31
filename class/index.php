@@ -523,20 +523,84 @@
 // }
 
 // Late Static Bindings
-class ParentClass {
-    public static function staticFunction() {
-        return "parent::staticFunction";
-    }
+// class ParentClass {
+//     public static function staticFunction() {
+//         return "parent::staticFunction";
+//     }
 
-    public function getStaticFunction() {
-        return self::staticFunction();
-    }
-}
+//     public function getStaticFunction() {
+//         return self::staticFunction();
+//     }
+// }
 
 // echo ParentClass::staticFunction();
 
-$parentClass = new ParentClass();
+// $parentClass = new ParentClass();
 
-echo $parentClass->getStaticFunction();
+// echo $parentClass->getStaticFunction();
+
+// Object Cloning
+
+// class Car {
+//     public $name = "car";
+
+//     public function __construct($name)
+//     {   
+//         $this->name = $name;
+//     }
+// }
+
+// $car = new Car('Maruti');
+
+// echo $car->name;
+
+// $car1 = clone $car;
+
+// echo $car1->name;
+
+// Comparing Objects
+
+// class Test {
+
+// }
+
+// $test = new Test();
+
+// $test3 = clone $test;
+
+// class Test2 {
+
+// }
+
+// $test2 = new Test2();
+
+// echo $test === $test3 ? '1' : '2';
+
+// 21. Objects and references
+
+// class Test {
+
+// }
+
+// $test = new Test();
+
+// $test2  = &$test;
+
+
+// $name = 'deepak';
+
+// $$name = "singh";
+
+// echo $deepak;
+
+// Object Serialization
+
+class Test {
+
+}
+
+$test = new Test();
+
+print_r(unserialize(serialize($test)));
 
 
