@@ -595,12 +595,58 @@
 
 // Object Serialization
 
-class Test {
+// class Test {
 
+// }
+
+// $test = new Test();
+
+// print_r(unserialize(serialize($test)));
+
+// class Test {
+//     public function testing($name) {
+//         return "Test";
+//     }
+// }
+
+// class Test2 extends Test {
+//     public function testing($name ,$name) {
+//         return "Test2";
+//     }
+// }
+
+// $test2 = new Test2();
+
+// echo $test2->testing();
+
+class Test {
+    public $name;
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
 }
 
-$test = new Test();
+class Test2 extends Test {
+    public $fullname;
+    public function __construct($fullname) {
+        $this->fullname = $fullname;
 
-print_r(unserialize(serialize($test)));
+        parent::__construct($fullname);
+    }
+
+    public function getFullName(){
+        return $this->fullname;
+    }
+}
+
+$test2 = new Test2('deepak');
+
+echo $test2->getName();
 
 
