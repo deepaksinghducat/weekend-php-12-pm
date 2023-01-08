@@ -24,7 +24,15 @@
                      <a href="posts.php" class="nav-link">
                          <i class="nav-icon fas fa-th"></i>
                          <p>
-                            Post
+                             Post
+                         </p>
+                     </a>
+                 </li>
+                 <li class="nav-item">
+                     <a href="users.php" class="nav-link">
+                         <i class="nav-icon fas fa-th"></i>
+                         <p>
+                             User
                          </p>
                      </a>
                  </li>

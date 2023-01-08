@@ -8,7 +8,7 @@ $dataBaseClass = new Database();
 
 $connection = $dataBaseClass->connect();
 
-$postClass = new Post($connection);
+$userClass = new User($connection);
 
 if (isset($_POST)) {
 
@@ -16,7 +16,7 @@ if (isset($_POST)) {
 
     $data = array_merge($data, $_FILES);
 
-    $result = $postClass->store($data);
+    $result = $userClass->store($data);
    
-    header("Location: posts.php");
+    header("Location: users.php");
 }

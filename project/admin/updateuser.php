@@ -8,15 +8,16 @@ $dataBaseClass = new Database();
 
 $connection = $dataBaseClass->connect();
 
-$postClass = new Post($connection);
+$userClass = new User($connection);
+
 
 if (isset($_POST)) {
-
+    
     $data = $_POST;
 
     $data = array_merge($data, $_FILES);
 
-    $result = $postClass->store($data);
-   
-    header("Location: posts.php");
+    $result = $userClass->update($_POST['user_id'],$data);
+
+    header("Location: users.php");
 }

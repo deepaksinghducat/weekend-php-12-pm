@@ -1,25 +1,26 @@
 <?php require_once 'layouts/database.php'; ?>
 
 <?php
-    if (!isset($_GET['id'])) {
+    spl_autoload_register(function ($class) {
+        require  "./classes/" . $class . ".php";
+    });
+
+    $dataBaseClass = new Database();
+
+    $connection = $dataBaseClass->connect();
+
+    $postClass = new Post($connection);
+
+    if (! isset($_GET['id']) && $_GET['id'] == '') {
         header("Location: posts.php");
     }
 
     $id =  (int) ($_GET['id']);
 
-    $post = [];
+    $post = $postClass->getPostById($id);
 
-    $stmt =  $connection->prepare("select * from posts where id =:id");
-    $stmt->bindParam(":id", $id);
-    $query = $stmt->execute();
-
-    if ($query) {
-
-        $post = $stmt->fetchObject();
-
-        if ($post == false) {
-            header("Location: posts.php");
-        }
+    if (!$post) {
+        header("Location: posts.php");
     }
 ?>
 
@@ -44,17 +45,17 @@
                     <form action="updatepost.php" method="POST" enctype="multipart/form-data">
                         <div class="card-body">
 
-                            <input type="hidden" name="post_id" value="<?=$post->id?>">
+                            <input type="hidden" name="post_id" value="<?= $post->id ?>">
 
 
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" value="<?=$post->name?>" placeholder="Enter Name">
+                                <input type="text" class="form-control" id="name" name="name" value="<?= $post->name ?>" placeholder="Enter Name">
                             </div>
 
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <textarea name="description" id="description" class="form-control"><?=$post->description?></textarea>
+                                <textarea name="description" id="description" class="form-control"><?= $post->description ?></textarea>
                             </div>
 
                             <div class="form-group">
@@ -62,14 +63,14 @@
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input type="file" class="custom-file-input" id="image" name="image">
-                                        <input type="hidden" name="previous_image_path" value="<?=$post->image_path?>">
+                                        <input type="hidden" name="previous_image_path" value="<?= $post->image_path ?>">
                                         <label class="custom-file-label" for="image">Choose file</label>
                                     </div>
                                     <div class="input-group-append">
                                         <span class="input-group-text">Upload</span>
                                     </div>
                                 </div>
-                                <img src="<?=$post->image_path?>" height="50" />
+                                <img src="<?= $post->image_path ?>" height="50" />
                             </div>
                         </div>
                         <!-- /.card-body -->
