@@ -43,12 +43,14 @@ class User
             $image_path = $this->upload($data);
         }
 
+        $password = password_hash($data['password'],PASSWORD_DEFAULT);
+
         $stmt =  $this->connection->prepare("insert into users(first_name,last_name,email, password,image_path) values(:first_name, :last_name, :email, :password, :image_path)");
 
         $stmt->bindParam(':first_name', $data['first_name']);
         $stmt->bindParam(':last_name', $data['last_name']);
         $stmt->bindParam(':email', $data['email']);
-        $stmt->bindParam(':password', $data['password']);
+        $stmt->bindParam(':password', $password );
         $stmt->bindParam(':image_path', $image_path);
 
         $query = $stmt->execute();
@@ -124,5 +126,29 @@ class User
         }
 
         return $imagepath;
+    }
+
+    public function login($data) {
+
+        $stmt =  $this->connection->prepare("select * from users where email=:email");
+        $stmt->bindParam(":email", $data['email']);
+        $query = $stmt->execute();
+
+        if ($query) {
+            $user =  $stmt->fetchObject();
+
+            if($user) {
+                $passwordCheck = password_verify($data['password'], $user->password);
+                if($passwordCheck) {
+                    return $user;
+                }
+
+                return false;                
+            }
+
+            return false;
+        }
+
+        return false;
     }
 }
